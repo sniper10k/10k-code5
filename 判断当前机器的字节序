@@ -1,0 +1,24 @@
+# 10k-code5
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+
+int check_sys()
+{
+	int a = 1;
+	return *(char*)&a;	//将&a转换成char*类型,*解引用char* &a返回一个字节;
+}
+int main()
+{
+	int ret = 0;
+	ret = check_sys();
+	if (ret == 1)
+	{
+		printf("小端");
+	}
+	else
+	{
+		printf("大端");
+	}
+	return 0;
+}
