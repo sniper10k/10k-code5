@@ -1,0 +1,22 @@
+# 10k-code5
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+
+int my_strlen(const char* src)
+{
+	int count = 0;
+	assert(src != NULL);	//保证指针有效性;
+	while (*src != 0)
+	{
+		count++;
+		src++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "abcdef";
+	printf("%d", my_strlen(arr));
+	return 0;
+}
