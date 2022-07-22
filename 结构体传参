@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+typedef struct stu
+{
+	char name[20];
+	short age;
+	char tele[12];
+	char sex[5];
+}Stu;
+void print1(Stu tmp)        //print1需要创建一个和s一样大小的tmp 占用内存大
+{
+	printf("name: %s\n", tmp.name);
+	printf("age:  %d\n", tmp.age);
+	printf("tele: %s\n", tmp.tele);
+	printf("sex:  %s\n", tmp.sex);
+}
+void print2(Stu* p)        //print2更好 传地址占内存空间只有指针的大小
+{
+	printf("name: %s\n", p->name);
+	printf("age:  %d\n", p->age);
+	printf("tele: %s\n", p->tele);
+	printf("sex:  %s\n", p->sex);
+}
+int main()
+{
+	Stu s = { "张三",20,"15562360995","男" };
+	print1(s);
+	print2(&s);
+	return 0;
+}
