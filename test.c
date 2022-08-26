@@ -2,42 +2,26 @@
 #include<stdio.h>
 int main()
 {
-	int line = 0;
-	scanf("%d", &line);
-	int i = 0;
-	//打印上半部分
-	for (i = 0; i < line; i++)
+	int money = 0;
+	int total = 0;
+	int empty = 0;
+	scanf("%d", &money);
+	total = money;
+	empty = total;
+	//int sum=0;
+	//sum = total;
+	//while (empty>=2)
+	//{
+	//	total = empty / 2;
+	//	empty = total + empty % 2;
+	//	sum += total;
+	//}
+	//printf("%d", sum);
+	while (empty >= 2)
 	{
-		int j = 0;
-		//打印空格
-		for (j = 0; j < line - 1 - i; j++)
-		{
-			printf(" ");
-		}
-		//打印星号
-		for (j = 0; j < i * 2 + 1; j++)
-		{
-			printf("*");
-		}
-		//换行
-		printf("\n");
+		total += empty / 2;
+		empty = empty / 2 + empty % 2;
 	}
-	//打印下半部分
-	for (i = 0; i < line - 1; i++)
-	{
-		int j = 0;
-		//打印空格
-		for (j = 0; j <= i; j++)
-		{
-			printf(" ");
-		}
-		//打印星号
-		for (j = 0; j < 2*(line-1-i)-1; j++)
-		{
-			printf("*");
-		}
-		//换行
-		printf("\n");
-	}
+	printf("total=%d\n", total);
 	return 0;
 }
